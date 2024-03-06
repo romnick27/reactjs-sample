@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import { StandardCard2, NavBarHeader2, MarketingFooter } from './ui-components'
+import { StandardCard2Collection, NavBarHeader2, NavBarSide, MarketingFooter } from './ui-components'
 function App() {
   return (
     <>
      <NavBarHeader2 width="100%" marginButton='20px' />
-      <StandardCard2 />
+      <StandardCard2Collection />
     <MarketingFooter width="100%" />
     < />
   );
