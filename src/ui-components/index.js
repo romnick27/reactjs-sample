@@ -38,6 +38,7 @@ export { default as ProfileCard } from "./ProfileCard";
 export { default as ReviewCard } from "./ReviewCard";
 export { default as SideBar } from "./SideBar";
 export { default as SocialPost } from "./SocialPost";
+export { default as SocialPostCollection } from "./SocialPostCollection";
 export { default as StandardCard } from "./StandardCard";
 export { default as StandardCard2 } from "./StandardCard2";
 export { default as StandardCard2Collection } from "./StandardCard2Collection";

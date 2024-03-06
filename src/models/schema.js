@@ -35,9 +35,7 @@ export const schema = {
                     "isArrayNullable": true,
                     "association": {
                         "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "owner"
-                        ]
+                        "associatedWith": "owner"
                     }
                 },
                 "createdAt": {
@@ -124,9 +122,7 @@ export const schema = {
                     "isArrayNullable": true,
                     "association": {
                         "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "home"
-                        ]
+                        "associatedWith": "home"
                     }
                 },
                 "createdAt": {
@@ -181,20 +177,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "ownerId": {
-                    "name": "ownerId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "homeId": {
-                    "name": "homeId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "owner": {
                     "name": "owner",
                     "isArray": false,
@@ -205,9 +187,7 @@ export const schema = {
                     "attributes": [],
                     "association": {
                         "connectionType": "BELONGS_TO",
-                        "targetNames": [
-                            "ownerId"
-                        ]
+                        "targetName": "ownerID"
                     }
                 },
                 "home": {
@@ -220,9 +200,7 @@ export const schema = {
                     "attributes": [],
                     "association": {
                         "connectionType": "BELONGS_TO",
-                        "targetNames": [
-                            "homeId"
-                        ]
+                        "targetName": "homeID"
                     }
                 },
                 "createdAt": {
@@ -254,7 +232,7 @@ export const schema = {
                     "properties": {
                         "name": "byOwner",
                         "fields": [
-                            "ownerId"
+                            "ownerID"
                         ]
                     }
                 },
@@ -263,7 +241,7 @@ export const schema = {
                     "properties": {
                         "name": "byHome",
                         "fields": [
-                            "homeId"
+                            "homeID"
                         ]
                     }
                 }
@@ -273,5 +251,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "1c687e33637e8754238105efdf2b4982"
+    "version": "130f44f11e70b6809348ed7f0e70ea28"
 };

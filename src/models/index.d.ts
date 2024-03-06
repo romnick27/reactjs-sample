@@ -1,16 +1,20 @@
-import { ModelInit, MutableModel, __modelMeta__, ManagedIdentifier } from "@aws-amplify/datastore";
+import { ModelInit, MutableModel } from "@aws-amplify/datastore";
 // @ts-ignore
 import { LazyLoading, LazyLoadingDisabled, AsyncCollection, AsyncItem } from "@aws-amplify/datastore";
 
+type OwnerMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
 
+type HomeMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
 
-
+type OwnerHomeMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
 
 type EagerOwner = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Owner, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
   readonly id: string;
   readonly ownername: string;
   readonly address?: string | null;
@@ -20,10 +24,6 @@ type EagerOwner = {
 }
 
 type LazyOwner = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Owner, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
   readonly id: string;
   readonly ownername: string;
   readonly address?: string | null;
@@ -34,15 +34,11 @@ type LazyOwner = {
 
 export declare type Owner = LazyLoading extends LazyLoadingDisabled ? EagerOwner : LazyOwner
 
-export declare const Owner: (new (init: ModelInit<Owner>) => Owner) & {
-  copyOf(source: Owner, mutator: (draft: MutableModel<Owner>) => MutableModel<Owner> | void): Owner;
+export declare const Owner: (new (init: ModelInit<Owner, OwnerMetaData>) => Owner) & {
+  copyOf(source: Owner, mutator: (draft: MutableModel<Owner, OwnerMetaData>) => MutableModel<Owner, OwnerMetaData> | void): Owner;
 }
 
 type EagerHome = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Home, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
   readonly id: string;
   readonly address?: string | null;
   readonly image_url?: string | null;
@@ -53,10 +49,6 @@ type EagerHome = {
 }
 
 type LazyHome = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Home, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
   readonly id: string;
   readonly address?: string | null;
   readonly image_url?: string | null;
@@ -68,18 +60,12 @@ type LazyHome = {
 
 export declare type Home = LazyLoading extends LazyLoadingDisabled ? EagerHome : LazyHome
 
-export declare const Home: (new (init: ModelInit<Home>) => Home) & {
-  copyOf(source: Home, mutator: (draft: MutableModel<Home>) => MutableModel<Home> | void): Home;
+export declare const Home: (new (init: ModelInit<Home, HomeMetaData>) => Home) & {
+  copyOf(source: Home, mutator: (draft: MutableModel<Home, HomeMetaData>) => MutableModel<Home, HomeMetaData> | void): Home;
 }
 
 type EagerOwnerHome = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<OwnerHome, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
   readonly id: string;
-  readonly ownerId?: string | null;
-  readonly homeId?: string | null;
   readonly owner: Owner;
   readonly home: Home;
   readonly createdAt?: string | null;
@@ -87,13 +73,7 @@ type EagerOwnerHome = {
 }
 
 type LazyOwnerHome = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<OwnerHome, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
   readonly id: string;
-  readonly ownerId?: string | null;
-  readonly homeId?: string | null;
   readonly owner: AsyncItem<Owner>;
   readonly home: AsyncItem<Home>;
   readonly createdAt?: string | null;
@@ -102,6 +82,6 @@ type LazyOwnerHome = {
 
 export declare type OwnerHome = LazyLoading extends LazyLoadingDisabled ? EagerOwnerHome : LazyOwnerHome
 
-export declare const OwnerHome: (new (init: ModelInit<OwnerHome>) => OwnerHome) & {
-  copyOf(source: OwnerHome, mutator: (draft: MutableModel<OwnerHome>) => MutableModel<OwnerHome> | void): OwnerHome;
+export declare const OwnerHome: (new (init: ModelInit<OwnerHome, OwnerHomeMetaData>) => OwnerHome) & {
+  copyOf(source: OwnerHome, mutator: (draft: MutableModel<OwnerHome, OwnerHomeMetaData>) => MutableModel<OwnerHome, OwnerHomeMetaData> | void): OwnerHome;
 }
