@@ -1,0 +1,15 @@
+{
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-romamplifyhomes-main-71130-authRole",
+      "UnauthRoleArn": "arn:aws:iam::864259425984:role/amplify-romamplifyhomes-main-71130-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::864259425984:role/amplify-romamplifyhomes-main-71130-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-romamplifyhomes-main-71130-deployment",
+      "UnauthRoleName": "amplify-romamplifyhomes-main-71130-unauthRole",
+      "StackName": "amplify-romamplifyhomes-main-71130",
+      "StackId": "arn:aws:cloudformation:us-east-1:864259425984:stack/amplify-romamplifyhomes-main-71130/c1d2ffd0-db88-11ee-ba09-1218a851e869",
+      "AmplifyAppId": "dnonpm2i5ldy2"
+    }
+  }
+}
